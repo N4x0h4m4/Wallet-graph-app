@@ -24,7 +24,9 @@ const App = () => {
     setIsLoading(true);
     setError('');
     try {
-      const response = await fetch(`http://localhost:3001/api/wallet/${walletAddress}`);
+      //const response = await fetch(`http://localhost:3001/api/wallet/${walletAddress}`);//ローカル用
+      const response = await fetch(`/api/wallet/${walletAddress}`);//デプロイ用
+
       if (!response.ok) {
         throw new Error('データ取得に失敗しました。');
       }
